@@ -1,0 +1,249 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Manage users
+{% endblock %}
+
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <style>
+    .govuk-button {
+      margin-bottom: 0;
+      float: right;
+    }
+  </style>
+
+  <div class="govuk-grid-column-full-width">
+    <span class="govuk-caption-xl">FES admin system - internal system access</span>
+    <h1 class="govuk-heading-xl">Manage users</h1>
+    <a href="add-user" role="button" class="govuk-button">
+      Add a new user
+    </a>
+  </div>
+  <br>
+
+  <div class="govuk-tabs" data-module="tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#active">
+          Active (6)
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#deactivated">
+          Deactivated (8)
+        </a>
+      </li>
+    </ul>
+
+    <section class="govuk-tabs__panel" id="active">
+      <div class="govuk-grid-column-full-width">
+
+        <h2 class="govuk-heading-l">Active users</h2>
+      </div>
+
+      <div class="govuk-grid-column-full-width">
+        <div class="govuk-grid-column-full-width">
+          <p class="hmcts-pagination__results">
+            Showing
+            <b>
+              6</b>
+            results</p>
+          {{ govukTable({
+
+     firstCellIsHeader: false,
+     class:sortable,
+     head: [
+     {
+     html: "<a href='' class='sort'>Email"
+     },
+     {
+     html: "<a href=''>Name</a>"
+     },
+     {
+     html: "<a href=''>Role</a>"
+    },
+     {
+     html: "<a href=''>Service now reference</a>",
+     format: "numeric"
+     },
+     {
+     text: "Action",
+     format: "numeric"
+     }
+     ],
+     rows: [
+     [
+     {
+     text: "jsmith@companieshouse.gov.uk"
+     },{
+     text: "John Smith"
+     },
+     {
+      text: "Admin"
+     },
+
+     {
+      text: "INC0244107",
+      format: "numeric"
+     },
+     {
+      html:"<a href='user-deactivated' class='govuk-button govuk-button--warning' data-module='govuk-button'>
+      Deactivate
+    </a>"
+     }
+
+     ],
+
+     [
+     {
+     text: "jsmith@companieshouse.gov.uk"
+     },{
+     text: "John Smith"
+     },
+     {
+      text: "Secure user"
+     },
+
+     {
+      text: "INC0244107",
+      format: "numeric"
+     },
+     {
+       html:"<a href='user-deactivated' class='govuk-button govuk-button--warning' data-module='govuk-button'>
+       Deactivate
+     </a>"
+     }
+
+     ],[
+     {
+     text: "jsmith@companieshouse.gov.uk"
+     },{
+     text: "John Smith"
+     },
+     {
+      text: "Admin"
+     },
+
+     {
+      text: "INC0244107",
+      format: "numeric"
+     },
+     {
+       html:"<a href='user-deactivated' class='govuk-button govuk-button--warning' data-module='govuk-button'>
+       Deactivate
+     </a>"
+     }
+
+     ],[
+     {
+     text: "jsmith@companieshouse.gov.uk"
+     },{
+     text: "John Smith"
+     },
+     {
+      text: "Secure user"
+     },
+
+     {
+      text: "INC0244107",
+      format: "numeric"
+     },
+     {
+       html:"<a href='user-deactivated' class='govuk-button govuk-button--warning' data-module='govuk-button'>
+       Deactivate
+     </a>"
+     }
+
+     ],[
+     {
+     text: "jsmith@companieshouse.gov.uk"
+     },{
+     text: "John Smith"
+     },
+     {
+      text: "Secure user"
+     },
+
+     {
+      text: "INC0244107",
+      format: "numeric"
+     },
+     {
+       html:"<a href='user-deactivated' class='govuk-button govuk-button--warning' data-module='govuk-button'>
+       Deactivate
+     </a>"
+     }
+
+     ],[
+     {
+     text: "jsmith@companieshouse.gov.uk"
+     },{
+     text: "John Smith"
+     },
+     {
+      text: "Secure user"
+     },
+
+     {
+      text: "INC0244107",
+      format: "numeric"
+     },
+     {
+       html:"<a href='user-deactivated' class='govuk-button govuk-button--warning' data-module='govuk-button'>
+       Deactivate
+     </a>"
+     }
+
+     ]
+
+     ]
+     }) }}
+          <p class="hmcts-pagination__results">Showing
+            <b>6</b>
+            results</p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="govuk-tabs__panel" id="deactivated">
+
+      <h2 class="govuk-heading-l">Deactivated users</h2>
+
+      <div class="govuk-grid-column-full-width">
+        <p class="govuk-hint">These users have either left the secure team or their accounts have been locked due to entering their details incorrectly.</p>
+        <p class="hmcts-pagination__results">
+          Showing
+          <b>
+            6</b>
+          results</p>
+        {{ govukTable({ firstCellIsHeader: false, class:sortable, head: [ { html: "<a href=''
+        class='sort'>Email" }, { html: "<a href=''>Name</a>" }, { html: "<a href=''>Role</a>" }, { html: "<a href=''>Service now reference</a>", format: "numeric" }, { text: "Action", format: "numeric" } ], rows: [ [ { text: "jsmith@companieshouse.gov.uk"
+        },{ text: "John Smith" }, { text: "Admin" }, { text: "INC0244107", format: "numeric" }, { html:"<a href='reactivate' class='govuk-button' data-module='govuk-button'> Reactivate </a>" } ], [ { text:
+        "jsmith@companieshouse.gov.uk" },{ text: "John Smith" }, { text: "Secure user" }, { text: "INC0244107", format: "numeric" }, { html:"<a href='reactivate' class='govuk-button' data-module='govuk-button'> Reactivate </a>" } ],[
+        { text: "jsmith@companieshouse.gov.uk" },{ text: "John Smith" }, { text: "Admin" }, { text: "INC0244107", format: "numeric" }, { html:"<a href='reactivate' class='govuk-button' data-module='govuk-button'> Reactivate </a>" }
+        ],[ { text: "jsmith@companieshouse.gov.uk" },{ text: "John Smith" }, { text: "Secure user" }, { text: "INC0244107", format: "numeric" }, { html:"<a href='user-deactivated' class='govuk-button' data-module='govuk-button'> Reactivate
+        </a>" } ],[ { text: "jsmith@companieshouse.gov.uk" },{ text: "John Smith" }, { text: "Secure user" }, { text: "INC0244107", format: "numeric" }, { html:"<a href='user-deactivated' class='govuk-button' data-module='govuk-button'>
+        Reactivate </a>" } ],[ { text: "jsmith@companieshouse.gov.uk" },{ text: "John Smith" }, { text: "Secure user" }, { text: "INC0244107", format: "numeric" }, { html:"<a href='user-deactivated' class='govuk-button'
+        data-module='govuk-button'> Reactivate </a>" } ], [ { text: "jsmith@companieshouse.gov.uk" },{ text: "John Smith" }, { text: "Secure user" }, { text: "INC0244107", format: "numeric" }, { html:"<a href='user-deactivated' class='govuk-button' data-module='govuk-button'> Reactivate </a>" } ] ,[ { text: "jsmith@companieshouse.gov.uk" },{ text: "John Smith" }, { text: "Secure user" }, { text: "INC0244107", format: "numeric" }, { html:"<a href='user-deactivated'
+        class='govuk-button' data-module='govuk-button'> Reactivate </a>" } ] ] }) }}
+        <p class="hmcts-pagination__results">Showing
+          <b>8</b>
+          results</p>
+      </div>
+    </section>
+  </div>
+{% endblock %}

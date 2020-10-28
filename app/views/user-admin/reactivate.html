@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Reactivate Sarah Philips
+{% endblock %}
+
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-column-full-width">
+    <span class="govuk-caption-xl">FES admin system - internal system access</span>
+    <h1 class="govuk-heading-xl">Reactivate Sarah Philips</h1>
+  </div>
+  <div class="govuk-grid-column-full-width">
+    <form autocomplete="off" class="form" action="user-added" method="post">
+
+      {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Deactivated reason"
+          },
+          value: {
+            text: 'Locked out/Admin removed on 11 Feb 2019 at 17:38'
+          }
+        },
+        {
+          key: {
+            text: "Role"
+          },
+          value: {
+            text: 'Secure team member'
+          }
+        },
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Sarah Philips"
+            }
+
+          },
+          {
+            key: {
+              text: "Email address"
+            },
+            value: {
+              html: '<a href="mailto:sphillips@companieshouse.gov.uk">sphillips@companieshouse.gov.uk</a>'
+            }
+
+          }
+
+        ]
+      }) }}
+
+      {{ govukInput({
+    label: {
+      text: "Service now reference"
+    },
+  hint: {
+    text: "A manager must authorise access by making a request via service now."
+  },
+    id: "service-now-reference",
+    name: "service-now-reference",
+    classes: "govuk-input--width-20"
+  }) }}
+
+      {{ govukInput({
+label: {
+  text: "Choose a new password"
+},
+
+hint: {
+html: "Password must contain at least <ul><li> 8 characters</li><li>1 upper case letter</li> <li>1 lower case letter</li> <li>1 number</li> <li> 1 symbol.</li></ul>"
+},
+id: "password",
+name: "password",
+classes: "govuk-input--width-20"
+}) }}
+
+      {{ govukInput({
+label: {
+text: "Confirm your new password"
+},
+id: "password",
+name: "password",
+classes: "govuk-input--width-20"
+}) }}
+
+      {{ govukButton({
+  text: "Add user"
+}) }}
+    </form>
+  </div>
+{% endblock %}

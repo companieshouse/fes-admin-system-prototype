@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  View documents
+{% endblock %}
+
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <a class="govuk-back-link" href="/list">Back</a>
+  <h1 class="govuk-heading-xl">
+    Scanned document submissions
+  </h1>
+
+  <div class="govuk-form-group">
+    <span id="search-hint" class="govuk-hint">
+      Search by barcode, user or company number
+    </span>
+    <input class="govuk-input govuk-!-width-two-thirds" id="one-quarter" name="one-quarter" type="text">
+  </div>
+
+  {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "changed-name",
+      name: "changed-name",
+      fieldset: {
+        legend: {
+          text: "What dates would you like to query?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "The last 24 hours"
+        },
+        {
+          value: "no",
+          text: "The last 7 days"
+        },
+        {
+          value: "no",
+          text: "The last 30 days"
+        },
+        {
+          value: "no",
+          text: "Show all dates"
+        }
+      ]
+    }) }}
+
+  <a href="/list-code" role="button" draggable="false" class="govuk-button">
+    Search
+  </a>
+
+  <br>
+
+  <div class="govuk-tabs" data-module="tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+
+    <h3 class="govuk-heading-l">Search results</h3>
+    <span id="results-hint" class="govuk-hint">
+      Showing 4 of 4 results
+    </span>
+    <div class="govuk-grid-column-full-width">
+      {{ govukTable({
+
+      firstCellIsHeader: false,
+      class:sortable,
+      head: [
+      {
+      html: "<a href=''>Barcode</a>"
+      },
+      {
+      html: " <a href=''>User</a>"
+      },
+      {
+      html: " <a href=''>Company number</a>"
+      },
+      {
+      html: " <a href=''>Type</a>"
+      },
+      {
+      html: " <a href=''>Status</a>"
+      },
+      {
+      html: "  <a href='' class='sort'>Status changed</a>",
+      format: "numeric"
+      }
+      ],
+      rows: [
+  [
+      {
+      html: " <a href=''>X92K2B3F</a>"
+      },
+
+      {
+      text: "fsmith"
+      },
+      {
+      text: "00030209"
+      },
+      {
+      text: "SH01"
+      },
+      {
+      text: "Accepted In Chips"
+      },
+      {
+      text: "01 May 2019",
+      format: "numeric"
+      }
+      ],
+
+      [
+      {
+      html: " <a href='/'>X96DGIDK</a>"
+      },{
+      text: "jgreen"
+      },
+      {
+      text: "00030209"
+      },
+      {
+      text: "TM01"
+      },
+
+      {
+      text: "EFS Accepted CHIPS"
+      },
+      {
+      text: "11 Mar 2019",
+      format: "numeric"
+      }
+      ],
+
+      [
+      {
+      html: " <a href='/'>X8IMI6YW</a>"
+      },{
+      text: "jgreen"
+      }, {
+       text: "00030209"
+       },
+      {
+      text: "CS01"
+      },
+
+      {
+      text: "Manual Validation"
+      },
+      {
+      text: "1 Mar 2019",
+      format: "numeric"
+      }
+
+      ],
+
+      [
+      {
+      html: " <a href='/'>X7GP66D5</a>"
+      },
+      {
+      text: "cjones"
+      },{
+      text: "00030209"
+      },
+      {
+      text: "AP01"
+      },
+
+      {
+      text: "Identified"
+      },
+      {
+      text: "22 Feb 2019",
+      format: "numeric"
+      }
+      ]
+
+      ]
+      }) }}
+
+    </div>
+
+  </div>
+{% endblock %}

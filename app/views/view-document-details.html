@@ -1,0 +1,281 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  View document details
+{% endblock %}
+
+{% block beforeContent %}
+  <script>
+    function myFunction() {
+      var copyText = document.getElementById('myInput')
+      copyText.select()
+      document.execCommand('copy')
+    }
+
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
+  <style>
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: white;
+      padding-top: 30px;
+      border-bottom: 10px solid #005ea5;
+      z-index: 1;
+    }
+    #myBtn {
+      display: none;
+      /* Hidden by default */
+      position: sticky;
+      /* Fixed/sticky position */
+      bottom: 20px;
+      /* Place the button at the bottom of the page */
+      z-index: 99;
+      /* Make sure it does not overlap */
+
+    }
+  </style>
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="sticky">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <span class="govuk-caption-xl">Document barcode - X92K2B3F</span>
+        <h1 class="govuk-heading-xl">AP03 - Appointment of a secretary</h1>
+      </div>
+      <div class="govuk-grid-column-one-half no-print">
+        <p class="float-right">Current status:<br>
+          <strong>
+            Sent to CHIPS</strong>
+          at 15:34 on Tuesday 30 July 2020</p>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-tabs" data-module="tabs">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#overview">
+          Overview
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#timeline">
+          Timeline
+        </a>
+      </li>
+    </ul>
+
+    <section class="govuk-tabs__panel" id="overview">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-l">Document overview</h2>
+        </div>
+        <div class="govuk-grid-column-one-half"></div>
+      </div>
+      <p>Document received at 10:34 on Monday 22 July 2020</p>
+
+      <h2 class="govuk-heading-m">Document details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Envelope number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8632
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Document ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            A64313
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company number (if known)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            03873501
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Scan time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            13:45 on Tuesday 3rd May 2020 by rhazell
+          </div>
+        </dl>
+        <h2 class="govuk-heading-m">CHIPS information</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              CHIPS org unit
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Scottish DEB (FES)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              CHIPS status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Allocated to user (pmonks)
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Form Identification
+            </dt>
+            <dd class="govuk-summary-list__value">
+              SLPPSC01
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Sent to CHIPS
+            </dd>
+          </div>
+
+        </dl>
+        <h2 class="govuk-heading-m">ICO information</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Returned to ICO (include reason)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              not for CHIPS (rhazell)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ICO Action
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Split
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Form re-identification
+            </dt>
+            <dd class="govuk-summary-list__value">
+              (audit timestamp)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Final stage
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Accepted on 3rd May 2020
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="govuk-tabs__panel" id="timeline">
+        <h2 class="govuk-heading-l">Timeline</h2>
+
+        {{ govukTable({
+
+firstCellIsHeader: false,
+class:sortable,
+head: [
+{
+  html: "Date"
+
+},{
+  html: "Event"
+},
+  {
+    html: "User"
+  }
+],
+rows: [
+  [ {
+     text: "20 January 2020 at 14:27pm"
+   }, {
+      text: "Document submitted"
+    },
+
+    {
+      text: "Tjones"
+    }
+  ],[ {
+     text: "20 January 2020 at 14:27pm"
+   }, {
+      text: "Document submitted"
+    },
+
+    {
+      text: "Tjones"
+    }
+  ],
+  [ {
+     text: "20 January 2020 at 14:27pm"
+   }, {
+      text: "Document submitted"
+    },
+
+    {
+      text: "Tjones"
+    }
+  ],
+  [ {
+     text: "20 January 2020 at 14:27pm"
+   }, {
+      text: "Document submitted"
+    },
+
+    {
+      text: "Tjones"
+    }
+  ]
+]
+}) }}
+      </section>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+.border {
+  border-width: 4px;
+  border-color: #dee0e2;
+  border-style: solid;
+  padding: .5em .5em 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+strong.govuk-tag {
+  margin: 7px;
+  background-color: #dee0e2;
+  text-transform: none;
+  color: black;
+  letter-spacing: 0;
+  font-weight: normal;
+}
+
+.float-right {
+  float: right;
+  text-align: right;
+}
+
+.StatusColumn {
+  width: 109px;
+}
+
+label.govuk-label.govuk-checkboxes__label {
+  font-size: .9em;
+}
+
+.govuk-tabs__list,
+.govuk-tabs__panel,
+.govuk-tabs__tab--selected {
+  border-color:: #000!important;
+}
+
+table .sort:after {
+  content: ' \25BC';
+  display: inline-block;
+}
+
+//Styles for account bar
+ul#navigation {
+  border-bottom: 1px solid $govuk-border-colour;
+  font-size: .9em;
+  margin: 0 0 1em;
+  padding: .8em 0;
+  text-align: right;
+
+  li {
+    display: inline;
+    padding: 0 0 0 1.5em;
+    font-family: 'nta', Arial;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  View applications
+{% endblock %}
+
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+
+  </ul>
+{% endblock %}
+
+{% block content %}
+  <a class="govuk-back-link" href="/list">Back</a>
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-xl">
+        Scanned document submissions
+      </h1>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <div class="govuk-form-group">
+        <span id="email-hint" class="govuk-hint">
+          Search by barcode, user or company number
+        </span>
+        <input class="govuk-input govuk-!-width-two-thirds" id="one-quarter" name="one-quarter" type="text">
+      </div>
+    </div>
+  </div>
+  {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "changed-name",
+                name: "changed-name",
+                fieldset: {
+                  legend: {
+                    text: "What dates would you like to query?",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                  {
+                    value: "24hours",
+                    text: "The last 24 hours"
+                  },
+                  {
+                    value: "7days",
+                    text: "The last 7 days"
+                  },
+                  {
+                    value: "30days",
+                    text: "The last 30 days"
+                  },
+                  {
+                    value: "all",
+                    text: "Show all dates"
+                  }
+                ]
+              }) }}
+  <a href="list" role="button" draggable="false" class="govuk-button">
+    Search
+  </a>
+</div>
+</div>
+</div>
+
+</div>
+{% endblock %}

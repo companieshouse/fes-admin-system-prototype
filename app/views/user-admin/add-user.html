@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Add user
+{% endblock %}
+
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-column-full-width">
+    <span class="govuk-caption-xl">FES admin system - access</span>
+    <h1 class="govuk-heading-xl">Add a user</h1>
+  </div>
+  <div class="govuk-grid-column-full-width">
+    <form autocomplete="off" class="form" action="user-added" method="post">
+
+      {{ govukRadios({
+        idPrefix: "sign-in",
+        name: "sign-in",
+        fieldset: {
+    legend: {
+      text: "What type of user?",
+      isPageHeading: false,
+      classes: "govuk-label"
+    }
+  },
+  items: [
+    {
+      value: "government-gateway",
+      text: "Admin",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "This role allows the user to add and remove accounts"
+      }
+    },
+    {
+      value: "govuk-verify",
+      text: "FES team member",
+      label: {
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "This role allows the user to search for documents."
+      }
+    }
+  ]
+}) }}
+      {{ govukInput({
+    label: {
+      text: "Service now reference"
+    },
+  hint: {
+    text: "A manager must authorise access by making a request via service now."
+  },
+    id: "service-now-reference",
+    name: "service-now-reference",
+    classes: "govuk-input--width-20"
+  }) }}
+      {{ govukInput({
+    label: {
+      text: "Username"
+    },
+    name: "username",
+    classes: "govuk-input--width-20"
+  }) }}
+      {{ govukInput({
+    label: {
+      text: "Name"
+    },
+    name: "name",
+    classes: "govuk-input--width-20"
+  }) }}
+
+      {{ govukInput({
+label: {
+  text: "Choose a password"
+},
+
+hint: {
+html: "Password must contain at least <ul><li> 8 characters</li><li>1 upper case letter</li> <li>1 lower case letter</li> <li>1 number</li> <li> 1 symbol.</li></ul>"
+},
+id: "password",
+name: "password",
+classes: "govuk-input--width-20"
+}) }}
+
+      {{ govukInput({
+label: {
+text: "Confirm your password"
+},
+id: "password",
+name: "password",
+classes: "govuk-input--width-20"
+}) }}
+
+      {{ govukButton({
+  text: "Add user"
+}) }}
+    </form>
+  </div>
+{% endblock %}
