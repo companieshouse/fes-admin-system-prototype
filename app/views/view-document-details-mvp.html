@@ -66,8 +66,9 @@
   <div class="sticky">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
-        <span class="govuk-caption-xl">Document barcode - X92K2B3F</span>
-        <h1 class="govuk-heading-xl">AP03 - Appointment of a secretary</h1>
+        <span class="govuk-caption-xl">Document type - SLP PSC01</span>
+        <h1 class="govuk-heading-xl">
+          Barcode - X92K2B3F</h1>
       </div>
       <div class="govuk-grid-column-one-half no-print">
         <p class="float-right">Current status:<br>
@@ -83,10 +84,39 @@
     </div>
     <div class="govuk-grid-column-one-half"></div>
   </div>
-  <p>Document received at 10:34 on Monday 26 Oct 2020</p>
 
+  <h2 class="govuk-heading-m">Status details</h2>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        CHIPS status
+      </dt>
+      <dd class="govuk-summary-list__value">Accepted in CHIPS (fsmith)</dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        FES status
+      </dt>
+      <dd class="govuk-summary-list__value">Sent to CHIPS</dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Location
+      </dt>
+      <dd class="govuk-summary-list__value">Scottish DEB (FES)</dd>
+    </div>
+
+  </dl>
   <h2 class="govuk-heading-m">Document details</h2>
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Form Identification
+      </dt>
+      <dd class="govuk-summary-list__value">
+        SLPPSC01
+      </dd>
+    </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Envelope number
@@ -119,44 +149,7 @@
         13:45 on Tuesday 27 Oct 2020 by rhazell
       </div>
     </dl>
-    <h2 class="govuk-heading-m">CHIPS information</h2>
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          CHIPS org unit
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Scottish DEB (FES)
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          CHIPS status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Accepted in CHIPS (fsmith)
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Form Identification
-        </dt>
-        <dd class="govuk-summary-list__value">
-          SLPPSC01
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Accepted in CHIPS (fsmith)
-        </dd>
-      </div>
-
-    </dl>
     <h2 class="govuk-heading-m">ICO information</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -172,30 +165,101 @@
           ICO Action
         </dt>
         <dd class="govuk-summary-list__value">
-          Split
+          Split (12:35 on Thursday 22 Oct 2020)
         </dd>
       </div>
+    </dl>
+    <h2 class="govuk-heading-m">Additional information</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Form re-identification
         </dt>
         <dd class="govuk-summary-list__value">
-          (audit timestamp)
+          15:45 on Friday 23 Oct 2020
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Final stage
+          Action taken
         </dt>
         <dd class="govuk-summary-list__value">
-          Accepted 27 Oct 2020
+          Accepted 15:45 on Tuesday 27 Oct 2020
         </dd>
       </div>
     </dl>
 
-  </div>
+    <h2 class="govuk-heading-l">Timeline</h2>
 
-</div>
-</div>
+    {{ govukTable({
 
-{% endblock %}
+firstCellIsHeader: false,
+class:sortable,
+head: [
+{
+text: "Date"
+
+},{
+text: "Event"
+},{
+text: "Location"
+},
+
+{
+  text: "CHIPS user"
+}
+],
+rows: [
+[ {
+   text: "20 Oct 2020 at 14:27pm"
+ }, {
+    text: "Split"
+  },
+  {
+    text: "."
+  },
+  {
+    text: "cgilmore"
+  }
+],
+
+[ {
+   text: "19 Oct 2020 at 11:07am"
+ }, {
+    text: "Form re-identification"
+  },{
+    text: ""
+  },
+
+  {
+    text: "swigley"
+  }
+],
+[ {
+   text: "18 Oct 2020 at 9:10am"
+ }, {
+    text: "Accepted"
+  },{
+    text: ""
+  },
+
+  {
+    text: "pmonks"
+  }
+],
+[ {
+   text: "17 Oct 2020 at 14:22pm"
+ }, {
+    text: "Scanned"
+  },{
+    text: ""
+  },
+
+  {
+    text: "rhazell"
+  }
+]
+]
+}) }}
+
+  {% endblock %}
