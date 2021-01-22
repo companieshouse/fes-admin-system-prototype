@@ -5,44 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <script>
-    function myFunction() {
-      var copyText = document.getElementById('myInput')
-      copyText.select()
-      document.execCommand('copy')
-    }
 
-    window.onscroll = function () {
-      scrollFunction()
-    };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
-  </script>
-  <style>
-    #myBtn {
-      display: none;
-      /* Hidden by default */
-      position: sticky;
-      /* Fixed/sticky position */
-      bottom: 20px;
-      /* Place the button at the bottom of the page */
-      z-index: 99;
-      /* Make sure it does not overlap */
-
-    }
-  </style>
   <ul id="navigation" class="mobile-hidden">
     <li class="user" id="signed-in-user">user@companieshouse.gov.uk
     </li>
@@ -54,18 +17,36 @@
 {% endblock %}
 
 {% block content %}
-
+  <div class="sticky">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <span class="govuk-caption-xl">Document type - SLP PSC01</span>
+        <h1 class="govuk-heading-xl">
+          Barcode - X92K2B3F</h1>
+      </div>
+      <div class="govuk-grid-column-one-half no-print">
+        <p class="float-right">Current status:<br>
+          <strong>
+            Accepted in CHIPS</strong><br>
+          at 15:34 on Wednesday 28 Oct 2020</p>
+      </div>
+    </div>
+  </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-      <span class="govuk-caption-xl">Document type - SLP PSC01</span>
-      <h1 class="govuk-heading-xl">
-        Barcode - X92K2B3F</h1>
+      <h2 class="govuk-heading-l">Document overview</h2>
     </div>
+    <div class="govuk-grid-column-one-half"></div>
   </div>
 
   <h2 class="govuk-heading-m">Status details</h2>
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        CHIPS status
+      </dt>
+      <dd class="govuk-summary-list__value">Accepted in CHIPS (fsmith)</dd>
+    </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         FES status
@@ -74,15 +55,9 @@
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
-        CHIPS status
-      </dt>
-      <dd class="govuk-summary-list__value">REJECT (fsmith)</dd>
-    </div>
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
         Location
       </dt>
-      <dd class="govuk-summary-list__value">RESOLUTIONS</dd>
+      <dd class="govuk-summary-list__value">Scottish DEB (FES)</dd>
     </div>
 
   </dl>
@@ -125,7 +100,7 @@
         Scan time
       </dt>
       <dd class="govuk-summary-list__value">
-        9 Jun 2020 at 4:48pm by rhazell
+        13:45 on Tuesday 27 Oct 2020 by rhazell
       </div>
     </dl>
 
@@ -133,15 +108,19 @@
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Returned to ICO
+          Returned to ICO (include reason)
         </dt>
-        <dd class="govuk-summary-list__value"></dd>
+        <dd class="govuk-summary-list__value">
+          not for CHIPS (rhazell)
+        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           ICO Action
         </dt>
-        <dd class="govuk-summary-list__value"></dd>
+        <dd class="govuk-summary-list__value">
+          Split (12:35 on Thursday 22 Oct 2020)
+        </dd>
       </div>
     </dl>
     <h2 class="govuk-heading-m">Additional information</h2>
@@ -150,14 +129,16 @@
         <dt class="govuk-summary-list__key">
           Form re-identification
         </dt>
-        <dd class="govuk-summary-list__value"></dd>
+        <dd class="govuk-summary-list__value">
+          15:45 on Friday 23 Oct 2020
+        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Action taken
         </dt>
         <dd class="govuk-summary-list__value">
-          REJECT on 20 Jul 2020 at 3:45pm
+          Accepted 15:45 on Tuesday 27 Oct 2020
         </dd>
       </div>
     </dl>
@@ -170,117 +151,63 @@ firstCellIsHeader: false,
 class:sortable,
 head: [
 {
-html: "Date"
+text: "Date"
 
 },{
-html: "Location"
+text: "Event"
+},{
+text: "Location"
 },
+
 {
-html:"Status"
-},
-{
-  html: "CHIPS user"
+  text: "CHIPS user"
 }
 ],
 rows: [
 [ {
-   text: "9 Jun 2020 at 4:48pm"
+   text: "20 Oct 2020 at 14:27pm"
  }, {
-    text: "LRESSP"
+    text: "Split"
+  },
+  {
+    text: "."
+  },
+  {
+    text: "cgilmore"
+  }
+],
+
+[ {
+   text: "19 Oct 2020 at 11:07am"
+ }, {
+    text: "Form re-identification"
   },{
-    text: "Received"
+    text: ""
   },
 
   {
-    text: ""
+    text: "swigley"
   }
 ],
-
 [ {
-   text: "16 Jun 2020 at 1:56pm"
+   text: "18 Oct 2020 at 9:10am"
  }, {
-    text: "LRESSP"
+    text: "Accepted"
   },{
-    text: "Errored"
-  },
-
-  {
     text: ""
+  },
+
+  {
+    text: "pmonks"
   }
 ],
 [ {
-   text: "16 Jun 2020 at 1:56pm"
+   text: "17 Oct 2020 at 14:22pm"
  }, {
-    text: "RETURNED TO ICO"
-  },
-  {
-     text: "Created"
-   },
-
-  {
+    text: "Scanned"
+  },{
     text: ""
-  }
-],
-[ {
-   text: "9 Jul 2020 at 7:31am"
- }, {
-    text: "RESOLUTIONS"
   },
-  {
-     text: "Received"
-   },
-
-  {
-    text: "rhazell"
-  }
-],
-[ {
-   text: "9 Jul 2020 at 7:31am"
- }, {
-    text: "RESOLUTIONS"
-  },
-  {
-     text: "Errored"
-   },
-
-  {
-    text: "rhazell"
-  }
-],
-[ {
-   text: "9 Jul 2020 at 7:45am"
- }, {
-    text: "RETURNED TO ICO"
-  },
-  {
-     text: "Created"
-   },
-
-  {
-    text: "rhazell"
-  }
-],
-[ {
-   text: "20 Jul 2020 at 8:40am"
- }, {
-    text: "RESOLUTIONS"
-  },
-  {
-     text: "Received"
-   },
-
-  {
-    text: "rhazell"
-  }
-],
-[ {
-   text: "20 Jul 2020 at 10.46am"
- }, {
-    text: "RESOLUTIONS"
-  },
-  {
-     text: "Reject"
-   },
 
   {
     text: "rhazell"
@@ -288,9 +215,5 @@ rows: [
 ]
 ]
 }) }}
-  </div>
 
-</div>
-</div>
-
-{% endblock %}
+  {% endblock %}

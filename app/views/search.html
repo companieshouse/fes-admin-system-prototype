@@ -15,51 +15,25 @@
 
 {% block content %}
 
-  <h1 class="govuk-heading-xl">
-    Search for documents
-  </h1>
+  {{ govukInput({
+  label: {
+    text: "Search for documents",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Search by document barcode"
+  },
+  id: "search",
+  name: "search",
+   classes: "govuk-input--width-20"
+}) }}
 
-  <div class="govuk-form-group">
-    <span id="search-hint" class="govuk-hint">
-      Search by barcode, CHIPS user or company number
-    </span>
-    <input class="govuk-input govuk-!-width-two-thirds" id="one-quarter" name="one-quarter" type="text">
-  </div>
+  {{ govukButton({
+    text: "Search",
+    href: "list"
+  }) }}
 
-  {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "changed-name",
-        name: "changed-name",
-        fieldset: {
-          legend: {
-            text: "What dates would you like to query?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "24hours",
-            text: "The last 24 hours"
-          },
-          {
-            value: "7days",
-            text: "The last 7 days"
-          },
-          {
-            value: "30days",
-            text: "The last 30 days"
-          },
-          {
-            value: "all",
-            text: "Show all dates"
-          }
-        ]
-      }) }}
-
-  <a href="list-mvp" role="button" draggable="false" class="govuk-button">
-    Search
-  </a>
 </div>
 </div>
 

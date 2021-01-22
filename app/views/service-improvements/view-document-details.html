@@ -31,15 +31,6 @@
     }
   </script>
   <style>
-    div.sticky {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      background-color: white;
-      padding-top: 30px;
-      border-bottom: 10px solid #005ea5;
-      z-index: 1;
-    }
     #myBtn {
       display: none;
       /* Hidden by default */
@@ -63,36 +54,18 @@
 {% endblock %}
 
 {% block content %}
-  <div class="sticky">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <span class="govuk-caption-xl">Document type - SLP PSC01</span>
-        <h1 class="govuk-heading-xl">
-          Barcode - X92K2B3F</h1>
-      </div>
-      <div class="govuk-grid-column-one-half no-print">
-        <p class="float-right">Current status:<br>
-          <strong>
-            Accepted in CHIPS</strong><br>
-          at 15:34 on Wednesday 28 Oct 2020</p>
-      </div>
-    </div>
-  </div>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-      <h2 class="govuk-heading-l">Document overview</h2>
+      <span class="govuk-caption-xl">Document type - SLP PSC01</span>
+      <h1 class="govuk-heading-xl">
+        Barcode - X92K2B3F</h1>
     </div>
-    <div class="govuk-grid-column-one-half"></div>
   </div>
 
   <h2 class="govuk-heading-m">Status details</h2>
   <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        CHIPS status
-      </dt>
-      <dd class="govuk-summary-list__value">Accepted in CHIPS (fsmith)</dd>
-    </div>
+
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         FES status
@@ -101,9 +74,15 @@
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
+        CHIPS status
+      </dt>
+      <dd class="govuk-summary-list__value">REJECT (fsmith)</dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
         Location
       </dt>
-      <dd class="govuk-summary-list__value">Scottish DEB (FES)</dd>
+      <dd class="govuk-summary-list__value">RESOLUTIONS</dd>
     </div>
 
   </dl>
@@ -146,7 +125,7 @@
         Scan time
       </dt>
       <dd class="govuk-summary-list__value">
-        13:45 on Tuesday 27 Oct 2020 by rhazell
+        9 Jun 2020 at 4:48pm by rhazell
       </div>
     </dl>
 
@@ -154,19 +133,15 @@
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Returned to ICO (include reason)
+          Returned to ICO
         </dt>
-        <dd class="govuk-summary-list__value">
-          not for CHIPS (rhazell)
-        </dd>
+        <dd class="govuk-summary-list__value"></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           ICO Action
         </dt>
-        <dd class="govuk-summary-list__value">
-          Split (12:35 on Thursday 22 Oct 2020)
-        </dd>
+        <dd class="govuk-summary-list__value"></dd>
       </div>
     </dl>
     <h2 class="govuk-heading-m">Additional information</h2>
@@ -175,16 +150,14 @@
         <dt class="govuk-summary-list__key">
           Form re-identification
         </dt>
-        <dd class="govuk-summary-list__value">
-          15:45 on Friday 23 Oct 2020
-        </dd>
+        <dd class="govuk-summary-list__value"></dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Action taken
         </dt>
         <dd class="govuk-summary-list__value">
-          Accepted 15:45 on Tuesday 27 Oct 2020
+          REJECT on 20 Jul 2020 at 3:45pm
         </dd>
       </div>
     </dl>
@@ -197,63 +170,117 @@ firstCellIsHeader: false,
 class:sortable,
 head: [
 {
-text: "Date"
+html: "Date"
 
 },{
-text: "Event"
-},{
-text: "Location"
+html: "Location"
 },
-
 {
-  text: "CHIPS user"
+html:"Status"
+},
+{
+  html: "CHIPS user"
 }
 ],
 rows: [
 [ {
-   text: "20 Oct 2020 at 14:27pm"
+   text: "9 Jun 2020 at 4:48pm"
  }, {
-    text: "Split"
+    text: "LRESSP"
+  },{
+    text: "Received"
   },
+
   {
-    text: "."
-  },
-  {
-    text: "cgilmore"
+    text: ""
   }
 ],
 
 [ {
-   text: "19 Oct 2020 at 11:07am"
+   text: "16 Jun 2020 at 1:56pm"
  }, {
-    text: "Form re-identification"
+    text: "LRESSP"
   },{
-    text: ""
+    text: "Errored"
   },
 
   {
-    text: "swigley"
+    text: ""
   }
 ],
 [ {
-   text: "18 Oct 2020 at 9:10am"
+   text: "16 Jun 2020 at 1:56pm"
  }, {
-    text: "Accepted"
-  },{
-    text: ""
+    text: "RETURNED TO ICO"
   },
+  {
+     text: "Created"
+   },
 
   {
-    text: "pmonks"
+    text: ""
   }
 ],
 [ {
-   text: "17 Oct 2020 at 14:22pm"
+   text: "9 Jul 2020 at 7:31am"
  }, {
-    text: "Scanned"
-  },{
-    text: ""
+    text: "RESOLUTIONS"
   },
+  {
+     text: "Received"
+   },
+
+  {
+    text: "rhazell"
+  }
+],
+[ {
+   text: "9 Jul 2020 at 7:31am"
+ }, {
+    text: "RESOLUTIONS"
+  },
+  {
+     text: "Errored"
+   },
+
+  {
+    text: "rhazell"
+  }
+],
+[ {
+   text: "9 Jul 2020 at 7:45am"
+ }, {
+    text: "RETURNED TO ICO"
+  },
+  {
+     text: "Created"
+   },
+
+  {
+    text: "rhazell"
+  }
+],
+[ {
+   text: "20 Jul 2020 at 8:40am"
+ }, {
+    text: "RESOLUTIONS"
+  },
+  {
+     text: "Received"
+   },
+
+  {
+    text: "rhazell"
+  }
+],
+[ {
+   text: "20 Jul 2020 at 10.46am"
+ }, {
+    text: "RESOLUTIONS"
+  },
+  {
+     text: "Reject"
+   },
 
   {
     text: "rhazell"
@@ -261,5 +288,9 @@ rows: [
 ]
 ]
 }) }}
+  </div>
 
-  {% endblock %}
+</div>
+</div>
+
+{% endblock %}

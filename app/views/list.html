@@ -12,17 +12,17 @@
     </li>
 
   </ul>
-  <a class="govuk-back-link" href="search">Back to search</a>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <h1 class="govuk-heading-xl">
-    Search results for "00030209"
+    Search results for "X92K2B3F"
   </h1>
 
   <span id="results-hint" class="govuk-hint">
-    Showing 4 of 4 results
+    Showing 1 of 1 results
   </span>
   <div class="govuk-grid-column-full-width">
     {{ govukTable({
@@ -31,24 +31,27 @@
       class:sortable,
       head: [
       {
-      html: "<a href=''>Barcode</a>"
+      text: "Barcode"
       },
       {
-      html: " <a href=''>User</a>"
+      text: "Allocated to"
       },
       {
-      html: " <a href=''>Company number</a>"
+      text: "Company number"
       },
       {
-      html: " <a href=''>Type</a>"
+      text: "Type"
       },
       {
-      html: " <a href=''>Status</a>"
+      text: "CHIPS Status"
       },
       {
-      html: "  <a href='' class='sort'>Status changed</a>",
-      format: "numeric"
+      text: "FES Status"
+      },
+      {
+      text: "Location"
       }
+
       ],
       rows: [
   [
@@ -63,83 +66,16 @@
       text: "00030209"
       },
       {
-      text: "AP03"
-      },
-      {
-      html: "<strong class='govuk-tag'>
-      Error - status conflict
-    </strong>"
-      },
-      {
-      text: "28 Oct 2020",
-      format: "numeric"
-      }
-      ],
-
-      [
-      {
-      html: " <a href='view-document-details'>X96DGIDK</a>"
-      },{
-      text: "jgreen"
-      },
-      {
-      text: "00030209"
-      },
-      {
-      text: "TM01"
-      },
-
-      {
-      text: "EFS Accepted CHIPS"
-      },
-      {
-      text: "21 Oct 2020",
-      format: "numeric"
-      }
-      ],
-
-      [
-      {
-      html: " <a href='view-document-details'>X8IMI6YW</a>"
-      },{
-      text: "jgreen"
-      }, {
-       text: "00030209"
-       },
-      {
-      text: "CS01"
-      },
-
-      {
-      text: "Manual Validation"
-      },
-      {
-      text: "14 Oct 2020",
-      format: "numeric"
-      }
-
-      ],
-
-      [
-      {
-      html: " <a href='view-document-details'>X7GP66D5</a>"
-      },
-      {
-      text: "cjones"
-      },{
-      text: "00030209"
-      },
-      {
-      text: "AP01"
-      },
-
-      {
-      text: "Identified"
-      },
-      {
-      text: "2 Oct 2020",
-      format: "numeric"
-      }
+      text: "SLP PSC01"
+    },{
+    text: "Allocated to user"
+    },
+    {
+    text: "Sent to CHIPS"
+  },
+    {
+    text: "Scottish DEB (FES)"
+    }
       ]
 
       ]

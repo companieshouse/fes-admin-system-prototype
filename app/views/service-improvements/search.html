@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Search
+{% endblock %}
+
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Search for documents
+  </h1>
+
+  <div class="govuk-form-group">
+    <span id="search-hint" class="govuk-hint">
+      Search by barcode, CHIPS user or company number
+    </span>
+    <input class="govuk-input govuk-!-width-two-thirds" id="one-quarter" name="one-quarter" type="text">
+  </div>
+
+  {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "What dates would you like to query?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "24hours",
+            text: "The last 24 hours"
+          },
+          {
+            value: "7days",
+            text: "The last 7 days"
+          },
+          {
+            value: "30days",
+            text: "The last 30 days"
+          },
+          {
+            value: "all",
+            text: "Show all dates"
+          }
+        ]
+      }) }}
+
+  <a href="list-mvp" role="button" draggable="false" class="govuk-button">
+    Search
+  </a>
+</div>
+</div>
+
+</div>
+{% endblock %}
